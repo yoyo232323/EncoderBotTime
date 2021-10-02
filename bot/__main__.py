@@ -88,7 +88,7 @@ if __name__ == "__main__" :
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
         await message.reply_text("```720p Mode has been set ON", quote=True)
-        cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -b:v 1M -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:s copy -y")
+        cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -b:v 1M -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -c:s copy -y")
                  
             
     @app.on_message(filters.incoming & filters.command(["normal_mode", f"normal_mode@{BOT_USERNAME}"]))
