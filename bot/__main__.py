@@ -1,3 +1,4 @@
+from bot import cmd1
 from datetime import datetime as dt
 import os
 from bot import (
@@ -87,8 +88,8 @@ if __name__ == "__main__" :
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
-        await message.reply_text("```720p Mode has been set ON", quote=True)
-        cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -b:v 1M -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -c:s copy -y")
+        await message.reply_text("```480p Mode has been set ON", quote=True)
+        cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -c:s copy -y")
                  
             
     @app.on_message(filters.incoming & filters.command(["normal_mode", f"normal_mode@{BOT_USERNAME}"]))
