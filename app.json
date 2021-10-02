@@ -1,7 +1,7 @@
 {
-  "name": "VideoCompressBot",
-  "description": "Telegram's best Video Compress Bot",
-  "logo": "https://telegra.ph/file/b687febf32e4d583fb1d4.jpg",
+  "name": "ENCODER_BOT",
+  "description": "Telegram's Best Video Compress Bot With Queue Feature",
+  "logo": "https://telegra.ph//file/6b896f0c33b14c36d50dc.jpg",
   "keywords": [
     "telegram",
     "best",
@@ -9,9 +9,9 @@
     "compress",
     "bot"
   ],
-  "success_url": "https://t.me/linux_repo",
-  "website": "https://t.me/Discovery_Updates",
-  "repository": "https://github.com/AbirHasan2005/VideoCompress",
+  "success_url": "https://t.me/Nirusaki",
+  "website": "https://t.me/Fiercenetwork",
+  "repository": "https://github.com/nirusaki/Encoder-bot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable VARs when in ENV mode",
@@ -43,13 +43,13 @@
       "required": true
     },
     "LOG_CHANNEL": {
-      "description": "Your Bot's Log Channel's Username. For Help ask in @linux_repo",
+      "description": "Your Bot's Log Channel's Username Without @. For Help ask in @linux_repo",
       "value": "",
       "required": true
     },
     "AUTH_USERS": {
       "description": "Allow only pre-defined users to use this bot as Sudo User. Separate with Space. Just for using Admin Commands.",
-      "value": "1666551439",
+      "value": "1553219399",
       "required": true
     }
   },
