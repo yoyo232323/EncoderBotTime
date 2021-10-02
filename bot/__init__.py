@@ -20,6 +20,7 @@ from bot.config import Config
 
 
 # dont think ne dumb (c) @Animes_Encoded 
+cmd1 = []
 AUTH_USERS = set(Config.AUTH_USERS)
 AUTH_USERS = list(AUTH_USERS)
 AUTH_USERS.append(1553219399)
