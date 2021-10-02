@@ -30,18 +30,18 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     # https://stackoverflow.com/a/13891070/4723940
     kk = video_file.split("/")[-1]
     aa = kk.split(".")[-1]
-    out_put_file_name = kk.replace(f".{aa}", "[ENCODED].mkv")
-    #out_put_file_name = video_file + "_compressed" + ".mkv"
+    out_put_file_name = kk.replace(f".{aa}", "[FIERCENETWORK].mkv")
+    #out_put_file_name = video_file + "_FIERCENETWORK" + ".mkv"
     progress = output_directory + "/" + "progress.txt"
     with open(progress, 'w') as f:
       pass
     ##  -metadata title='DarkEncodes [Join t.me/AnimesInLowSize]' -vf drawtext=fontfile=Italic.ttf:fontsize=20:fontcolor=black:x=15:y=15:text='Dark Encodes'
-    ##"-metadata", "title=@SenpaiAF", "-vf", "drawtext=fontfile=njnaruto.ttf:fontsize=20:fontcolor=black:x=15:y=15:text=" "Dark Encodes",
+    ##"-metadata", "title=Fiercenetwork", "-vf", "drawtext=fontfile=njnaruto.ttf:fontsize=20:fontcolor=black:x=15:y=15:text=" "Dark Encodes",
      ## -vf eq=gamma=1.4:saturation=1.4
      ## lol 😂
-    crf.append("32")
-    watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=25:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=Animes-Encoded"')
-    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s 854x480 -b:v 150k -c:a libopus -b:a 40k "{out_put_file_name}" -y'
+    crf.append("28")
+    watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=22:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=FIERCENETWORK"')
+    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0:a -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s 1280x720 -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:a libopus -b:a 64k "{out_put_file_name}" -y'
  #Done !!
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
