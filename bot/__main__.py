@@ -34,7 +34,7 @@ from bot.plugins.status_message_fn import (
 
 from bot.commands import Command
 from bot.plugins.call_back_button_handler import button
-sudo_users = "1666551439" 
+sudo_users = "1553219399" 
 
 uptime = dt.now()
 
@@ -76,19 +76,19 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["compress", f"compress@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot")
+            return await message.reply_text("NIKAL LAUDA !!")
         query = await message.reply_text("Added to Queue ⏰...\nPlease be patient, Compress will start soon", quote=True)
         data.append(message.reply_to_message)
         if len(data) == 1:
          await query.delete()   
          await add_task(message.reply_to_message)     
             
-    @app.on_message(filters.incoming & filters.command(["movie_mode", f"movie_mode@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["480p", f"480p@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
-        await message.reply_text("```Movie Mode has been set", quote=True)
-        cmd1.insert(0, "-pix_fmt yuv420p -preset veryfast -s 980x536 -crf 28 -b:v 2M -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 40k -c:s copy -y")
+        await message.reply_text("```720p Mode has been set ON", quote=True)
+        cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -b:v 1M -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:s copy -y")
                  
             
     @app.on_message(filters.incoming & filters.command(["normal_mode", f"normal_mode@{BOT_USERNAME}"]))
