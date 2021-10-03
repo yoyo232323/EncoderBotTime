@@ -88,7 +88,7 @@ if __name__ == "__main__" :
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
-        await message.reply_text("```480p Mode has been set ON", quote=True)
+        await message.reply_text("480p Mode has been set", quote=True)
         cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -c:s copy -y")
                  
             
@@ -96,7 +96,7 @@ if __name__ == "__main__" :
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
-        await message.reply_text("```Normal Mode has been set", quote=True)
+        await message.reply_text("1080p Mode has been set", quote=True)
         cmd1.insert(0, "-pix_fmt yuv420p10 -preset veryfast -s 1920x1080 -crf 25 -c:a libopus -ab 128k -c:s copy -y")
                          
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
