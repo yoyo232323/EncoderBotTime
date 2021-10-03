@@ -38,7 +38,7 @@
       "required": true
     },
     "BOT_USERNAME": {
-      "description": "Your Bot Username. Without `@` before Username!",
+      "description": "Your Bot Username. Without `@` before Username! Also Add your Bot As Admin In The Channel",
       "value": "",
       "required": true
     },
