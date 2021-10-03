@@ -1,3 +1,4 @@
+from bot.helper_funcs import file_genertor_command
 from bot.get_cfg import get_config
 class Config(object):
     # You can keep this default
