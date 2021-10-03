@@ -92,12 +92,12 @@ if __name__ == "__main__" :
         cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -c:s copy -y")
                  
             
-    @app.on_message(filters.incoming & filters.command(["normal_mode", f"normal_mode@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["1080p", f"1080p@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
         await message.reply_text("```Normal Mode has been set", quote=True)
-        cmd1.insert(0, "-s 820x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -crf 33.5 -c:a libopus -b:a 32k -c:s copy -ac 2  -ab 32k  -vbr 2 -level 3.1 -threads 3 -bf 3")
+        cmd1.insert(0, "-pix_fmt yuv420p10 -preset veryfast -s 1920x1080 -crf 25 -c:a libopus -ab 128k -c:s copy -y")
                          
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
     async def restarter(app, message):
