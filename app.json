@@ -1,13 +1,13 @@
 {
-  "name": "VideoCompressBot",
-  "description": "Telegram's best Video Compress Bot",
-  "logo": "https://telegra.ph/file/b687febf32e4d583fb1d4.jpg",
+  "name": "ENCODER BOT",
+  "description": "Telegram's best Video Encoder Bot",
+  "logo": "https://telegra.ph//file/d9d6d3d5bd820e1b5baae.jpg",
   "keywords": [
-    "telegram",
+    "Telegram",
     "best",
-    "video",
-    "compress",
-    "bot"
+    "Video",
+    "Encoder",
+    "Bot"
   ],
   "success_url": "https://t.me/linux_repo",
   "website": "https://t.me/Discovery_Updates",
