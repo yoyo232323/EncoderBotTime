@@ -38,12 +38,12 @@
       "required": true
     },
     "BOT_USERNAME": {
-      "description": "Your Bot Username. Without `@` before Username! Also Add your Bot As Admin In The Channel",
+      "description": "Your Bot Username. Without `@` before Username! ",
       "value": "",
       "required": true
     },
     "LOG_CHANNEL": {
-      "description": "Your Bot's Log Channel's Username. For Help ask in @linux_repo",
+      "description": "Create A Public Channel And Enter Username Without @ And Also Add Your Bot As Admin In The Channel.",
       "value": "",
       "required": true
     },
