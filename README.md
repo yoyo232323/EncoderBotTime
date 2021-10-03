@@ -18,17 +18,30 @@
 
 ### Commands Available ⚙
 start - Start The Bot
+
 ping - check ping
+
 compress - Manual Compressing
+
 eval - set crf ex /eval 27
+
 480p - 480p Encoding Mode
+
 1080p - 1080p Encoding Mode
+
 log - upload log file
+
 status - status
+
 cancel - Cancel The Task 
+
 help - how to use the bot 
+
 clear - Clear The Queue
+
 restart - restart the bot
+
 exec - Works As Bash In Ultroid
+
 stop - stop all proccesses
 
