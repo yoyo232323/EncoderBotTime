@@ -14,7 +14,8 @@ from bot import (
     data,
     app,
     crf,
-    watermark 
+    watermark,
+    resolution
 )
 from bot.helper_funcs.utils import add_task, on_task_complete
 from pyrogram import Client, filters
