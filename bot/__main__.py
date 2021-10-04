@@ -132,13 +132,16 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["cancel", f"cancel@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await incoming_cancel_message_f(app, message)
-        
+
+    @app.on_message(filters.incoming & filters.command(["eval", f"eval@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        await eval_message_f(app, message)    
         
     @app.on_message(filters.incoming & filters.command(["exec", f"exec@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await exec_message_f(app, message)
         
-    @app.on_message(filters.incoming & filters.command(["eval", f"eval@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await eval_message_f(app, message)
         
