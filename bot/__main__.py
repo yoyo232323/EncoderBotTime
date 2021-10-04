@@ -15,7 +15,6 @@ from bot import (
     app,
     crf,
     watermark,
-    resolution
 )
 from bot.helper_funcs.utils import add_task, on_task_complete
 from pyrogram import Client, filters
@@ -140,10 +139,6 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["exec", f"exec@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await exec_message_f(app, message)
-        
-    @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
-    async def help_message(app, message):
-        await eval_message_f(app, message)
         
     @app.on_message(filters.incoming & filters.command(["stop", f"stop@{BOT_USERNAME}"]))
     async def help_message(app, message):
