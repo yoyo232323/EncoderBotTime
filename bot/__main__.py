@@ -144,11 +144,7 @@ if __name__ == "__main__" :
         
     @app.on_message(filters.incoming & filters.command(["stop", f"stop@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await on_task_complete() 
-
-    @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
-    async def help_message(app, message):
-        await eval_message_f(app, message)   
+        await on_task_complete()  
    
     @app.on_message(filters.incoming & filters.command(["help", f"help@{BOT_USERNAME}"]))
     async def help_message(app, message):
@@ -157,6 +153,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await upload_log_file(app, message)
+
     @app.on_message(filters.incoming & filters.command(["ping", f"ping@{BOT_USERNAME}"]))
     async def up(app, message):
       stt = dt.now()
