@@ -24,6 +24,7 @@ from bot import (
     crf,
     watermark,
     pid_list,
+    resolution
 )
 
 async def convert_video(video_file, output_directory, total_time, bot, message, chan_msg):
@@ -42,7 +43,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     crf.append("27")
     resolution.append("1280x720")
     watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=25:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=FIERCENETWORK"')
-    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -preset medium -s 1280x720 -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:a libopus -b:a 64k "{out_put_file_name}" -y'
+    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -preset medium -s {resolution[0]}  -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:a libopus -b:a 64k "{out_put_file_name}" -y'
  #For Ffmpeg Use
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
