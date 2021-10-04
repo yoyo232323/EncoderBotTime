@@ -16,6 +16,7 @@ from bot import (
     crf,
     watermark,
     data,
+    resolution,
     pid_list
 )
 
