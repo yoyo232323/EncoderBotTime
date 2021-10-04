@@ -44,6 +44,7 @@ UPDATES_CHANNEL = "botlogas"
 data = []
 crf = []
 watermark = []
+resolution = []
 # senpai I am changing app string WHY???????
 pid_list = []
 app = Client(
