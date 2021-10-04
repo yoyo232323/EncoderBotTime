@@ -15,7 +15,6 @@ from bot import (
     AUTH_USERS,
     crf,
     watermark,
-    resolution,
     data,
     pid_list
 )
