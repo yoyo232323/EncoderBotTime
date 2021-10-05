@@ -137,7 +137,25 @@ if __name__ == "__main__" :
 
     @app.on_message(filters.incoming & filters.command(["eval", f"eval@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await eval_message_f(app, message)    
+        await eval_message_f(app, message) 
+
+    @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        if message.chat.id not in AUTH_USERS:
+            return await message.reply_text("Nikal Lauda")
+        await message.reply_text("The Given Resolution Have Been Set", quote=True) 
+  
+      @app.on_message(filters.incoming & filters.command(["bit", f"480p@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        if message.chat.id not in AUTH_USERS:
+            return await message.reply_text("Teri Makichut!!!!")
+        await message.reply_text("The Chosen Bit Has Been Set", quote=True) 
+
+      @app.on_message(filters.incoming & filters.command(["preset", f"preset@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        if message.chat.id not in AUTH_USERS:
+            return await message.reply_text("Behan Ka Lauda Yha Time Waste Karne Se Acha hai \n Kuch Ek Bot Banale Baghwan Aur Tera bhala hoga madarchod")
+        await message.reply_text("The Given Preset Have Been Set", quote=True)  
         
     @app.on_message(filters.incoming & filters.command(["exec", f"exec@{BOT_USERNAME}"]))
     async def help_message(app, message):
