@@ -145,7 +145,7 @@ if __name__ == "__main__" :
             return await message.reply_text("Nikal Lauda")
         await message.reply_text("The Given Resolution Have Been Set", quote=True) 
   
-      @app.on_message(filters.incoming & filters.command(["bit", f"480p@{BOT_USERNAME}"]))
+      @app.on_message(filters.incoming & filters.command(["bit", f"bit@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("Teri Makichut!!!!")
