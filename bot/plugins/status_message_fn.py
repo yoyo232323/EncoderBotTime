@@ -17,7 +17,9 @@ from bot import (
     watermark,
     data,
     resolution,
-    pid_list
+    pid_list,
+    bit,
+    preset
 )
 
 
