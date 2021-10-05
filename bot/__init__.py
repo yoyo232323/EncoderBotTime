@@ -45,6 +45,8 @@ data = []
 crf = []
 watermark = []
 resolution = []
+bit = []
+preset = []
 # senpai I am changing app string WHY???????
 pid_list = []
 app = Client(
