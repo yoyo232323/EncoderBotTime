@@ -95,8 +95,7 @@ async def incoming_start_message_f(bot, update):
     )
     
 async def incoming_compress_message_f(update):
-  """/compress command"""
-    await update.reply_to_message.forward(chat_id = LOG_CHANNEL)                              
+  """/compress command"""                            
   
 
   
