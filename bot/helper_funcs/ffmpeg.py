@@ -47,7 +47,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     bit.append("yuv420p")
     preset.append("medium")
     watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=25:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=FIERCENETWORK"')
-    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" -c:v libx265  -crf {crf[0]} -c:s copy -preset veryfast -pix_fmt yuv420p {watermark[0]} -s 640x480 -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:a libopus -b:a 96k "{out_put_file_name}" -y'
+    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" -c:v libx265  -crf {crf[0]} -c:s copy -preset veryfast -pix_fmt yuv420p {watermark[0]} -s 854x480 -metadata title="Visit For More Movies [WWW.FIERCENETWORK2.BLOGSPOT.COM]"  -metadata:s:v title="Visit Website[Fierce Toons] WWW.FIERCENETWORK2.BLOGSPOT.COM] - 720p - HEVC - 10bit"  -metadata:s:a title="[Visit WWW.FIERCENETWORK2.BLOGSPOT.COM] - Opus -128kbps" -metadata:s:s title="[Fierce Network Substations]" -c:a libopus -b:a 96k "{out_put_file_name}" -y'
  #For Ffmpeg Use
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
