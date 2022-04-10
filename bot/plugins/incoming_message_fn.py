@@ -344,9 +344,9 @@ async def incoming_compress_message_f(update):
       )
       u_start = time.time()
       caption = Localisation.COMPRESS_SUCCESS.replace('{}', downloaded_time, 1).replace('{}', compressed_time, 1)
-      await bot.send_document(document=a, chat_id=LOG_CHANNEL)
       upload = await bot.send_document(
         chat_id=update.chat.id,
+        chat_id=LOGS_CHANNEL
         document=o,
         caption=caption,
         force_document=false,
