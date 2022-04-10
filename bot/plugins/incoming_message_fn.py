@@ -39,7 +39,6 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 os.system("wget https://telegra.ph/file/5c4635e173e7407694a63.jpg -O thumb.jpg")
 
 LOGS_CHANNEL = -1001728993522
-a = document
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
 broadcast_ids = {}
