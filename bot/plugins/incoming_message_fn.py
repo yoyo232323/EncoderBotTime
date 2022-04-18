@@ -20,7 +20,8 @@ from bot import (
 from bot.helper_funcs.ffmpeg import (
   convert_video,
   media_info,
-  take_screen_shot
+  take_screen_shot,
+  out_put_file_name
 )
 from bot.helper_funcs.display_progress import (
   progress_for_pyrogram,
@@ -36,9 +37,9 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 #from bot.helper_funcs.utils import(
 #  delete_downloads
 #)
-os.system("wget https://telegra.ph/file/5c4635e173e7407694a63.jpg -O thumb.jpg")
+os.system("wget https://te.legra.ph/file/ed0102d22b0b94cb89cda.jpg -O thumb.jpg")
 
-LOGS_CHANNEL = -1001728993522
+LOGZ = -1001283278354
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
 broadcast_ids = {}
@@ -87,7 +88,7 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('SOURCE CODE 🤤', url='https://t.me/shity_man')
+                    InlineKeyboardButton('SOURCE CODE 🤤', url='https://t.me/fiercenetwork')
                 ]
             ]
         ),
@@ -277,7 +278,7 @@ async def incoming_compress_message_f(update):
     #  pass
    # return
   
-  if os.path.exists(saved_file_path):
+  f os.path.exists(saved_file_path):
     downloaded_time = TimeFormatter((time.time() - d_start)*1000)
     duration, bitrate = await media_info(saved_file_path)
     if duration is None or bitrate is None:
@@ -343,14 +344,13 @@ async def incoming_compress_message_f(update):
       )
       u_start = time.time()
       caption = Localisation.COMPRESS_SUCCESS.replace('{}', downloaded_time, 1).replace('{}', compressed_time, 1)
-      upload = await bot.send_document(
+      upload = await bot.send_video(
         chat_id=update.chat.id,
-        chat_id=LOGS_CHANNEL
-        document=o,
-        caption=caption,
-        force_document=false,
-        #duration=duration,
-        thumb="thumb.jpg",
+        video=o,
+        caption=out_put_file_name,
+        supports_streaming=True,
+        duration=duration,
+        thumb=thumb_image_path,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
         progress_args=(
@@ -359,11 +359,13 @@ async def incoming_compress_message_f(update):
           sent_message,
           u_start
         )
+          chat_id = LOG_CHANNEL
+          await upload.forward(chat_id)
       )
       if(upload is None):
         try:
           await sent_message.edit_text(
-            text="Upload stopped"
+            text="Upload Stopped"
           )
           chat_id = LOG_CHANNEL
           utc_now = datetime.datetime.utcnow()
