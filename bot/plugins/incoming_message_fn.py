@@ -278,7 +278,7 @@ async def incoming_compress_message_f(update):
     #  pass
    # return
   
-  f os.path.exists(saved_file_path):
+  if os.path.exists(saved_file_path):
     downloaded_time = TimeFormatter((time.time() - d_start)*1000)
     duration, bitrate = await media_info(saved_file_path)
     if duration is None or bitrate is None:
