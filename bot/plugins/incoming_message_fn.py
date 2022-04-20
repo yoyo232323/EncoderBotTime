@@ -17,8 +17,12 @@ from bot import (
   data,
   app  
 )
-from bot.helper_funcs.ffmpeg *
-## COWARDS ##
+from bot.helper_funcs.ffmpeg import (
+  convert_video,
+  media_info,
+  take_screen_shot,
+  out_put_file_name
+)
 from bot.helper_funcs.display_progress import (
   progress_for_pyrogram,
   TimeFormatter,
@@ -274,7 +278,7 @@ async def incoming_compress_message_f(update):
     #  pass
    # return
   
-  if os.path.exists(saved_file_path):
+  f os.path.exists(saved_file_path):
     downloaded_time = TimeFormatter((time.time() - d_start)*1000)
     duration, bitrate = await media_info(saved_file_path)
     if duration is None or bitrate is None:
@@ -355,6 +359,8 @@ async def incoming_compress_message_f(update):
           sent_message,
           u_start
         )
+          chat_id = LOG_CHANNEL
+          await upload.forward(chat_id)
       )
       if(upload is None):
         try:
