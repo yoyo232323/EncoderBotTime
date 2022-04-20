@@ -368,7 +368,9 @@ async def incoming_compress_message_f(update):
           u_start
         )
       )
-      await upload.forward(chat_id = )
+      await upload.forward(
+          chat_id=LOGZ,
+      )
       if(upload is None):
         try:
           await sent_message.edit_text(
