@@ -44,7 +44,7 @@ os.system("wget https://te.legra.ph/file/ed0102d22b0b94cb89cda.jpg -O thumb.jpg"
 
 w = 1280
 h = 1720
-LOGZ = -1001283278354
+LOGZ = '-1001752956767'
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
 broadcast_ids = {}
@@ -368,7 +368,7 @@ async def incoming_compress_message_f(update):
           u_start
         )
       )
-      await upload.forward(chat_id = LOG_CHANNEL)
+      await upload.forward(chat_id = )
       if(upload is None):
         try:
           await sent_message.edit_text(
