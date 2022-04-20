@@ -42,7 +42,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     ##"-metadata", "title=@SenpaiAF", "-vf", "drawtext=fontfile=njnaruto.ttf:fontsize=20:fontcolor=black:x=15:y=15:text=" "Dark Encodes",
      ## -vf eq=gamma=1.4:saturation=1.4
      ## lol 😂
-    crf.append("34")
+    crf.append("28.9)
     resolution.append("854x480")
     bit.append("yuv420p")
     preset.append("")
