@@ -17,12 +17,15 @@ from bot import (
   data,
   app  
 )
+
 from bot.helper_funcs.ffmpeg import (
   convert_video,
   media_info,
-  take_screen_shot,
-  out_put_file_name
+  take_screen_shot
 )
+
+## COWARDS ##
+
 from bot.helper_funcs.display_progress import (
   progress_for_pyrogram,
   TimeFormatter,
@@ -39,6 +42,8 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 #)
 os.system("wget https://te.legra.ph/file/ed0102d22b0b94cb89cda.jpg -O thumb.jpg")
 
+w = 1280
+h = 1720
 LOGZ = -1001283278354
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
@@ -225,6 +230,9 @@ async def incoming_compress_message_f(update):
         )
       )
       saved_file_path = video
+      eni = saved_file_path.split("/")[-1]
+      xnx = eni.split(".")[-1]
+      file_name_op = eni.replace(f".{xnx}", " [@FIERCENETWORK].mkv")
       LOGGER.info(saved_file_path)  
       LOGGER.info(video)
       if( video is None ):
@@ -278,13 +286,13 @@ async def incoming_compress_message_f(update):
     #  pass
    # return
   
-  f os.path.exists(saved_file_path):
+  if os.path.exists(saved_file_path):
     downloaded_time = TimeFormatter((time.time() - d_start)*1000)
     duration, bitrate = await media_info(saved_file_path)
     if duration is None or bitrate is None:
       try:
         await sent_message.edit_text(                
-          text="⚠️ Getting video meta data failed ⚠️"                
+          text="⚠️ Getting Video Metadata Failed ⚠️"                
         )
         chat_id = LOG_CHANNEL
         utc_now = datetime.datetime.utcnow()
@@ -347,7 +355,7 @@ async def incoming_compress_message_f(update):
       upload = await bot.send_video(
         chat_id=update.chat.id,
         video=o,
-        caption=out_put_file_name,
+        caption=file_name_op,
         supports_streaming=True,
         duration=duration,
         thumb=thumb_image_path,
@@ -359,9 +367,8 @@ async def incoming_compress_message_f(update):
           sent_message,
           u_start
         )
-          chat_id = LOG_CHANNEL
-          await upload.forward(chat_id)
       )
+      await upload.forward(chat_id = LOG_CHANNEL)
       if(upload is None):
         try:
           await sent_message.edit_text(
