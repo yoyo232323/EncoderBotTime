@@ -372,7 +372,7 @@ async def incoming_compress_message_f(update):
         )
       )
       await upload.forward(
-          chat_id={logz[0]},
+          chat_id=logz[0],
       )
       if(upload is None):
         try:
