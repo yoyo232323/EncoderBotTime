@@ -42,12 +42,12 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     ##"-metadata", "title=@SenpaiAF", "-vf", "drawtext=fontfile=njnaruto.ttf:fontsize=20:fontcolor=black:x=15:y=15:text=" "Dark Encodes",
      ## -vf eq=gamma=1.4:saturation=1.4
      ## lol 😂
-    crf.append("26.6")
+    crf.append("27.2")
     resolution.append("854x480")
     bit.append("yuv420p")
     preset.append("")
     watermark.append("")
-    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}"  -i "https://te.legra.ph/file/e9408e71281cdcb017874.png" -map 0 -filter_complex "overlay =main_w-(overlay_w+10):main_h-(overlay_h+10)"  -c:v libx265 -crf {crf[0]} -c:s copy -s 768x576 -preset faster -metadata title="Visit For More Movies [t.me/AniXpo]"  -metadata:s:v title="Visit Website[Anixpo] t.me/AniXpo] - 480p - HEVC - 8bit"  -metadata:s:a title="[Visit t.me/AniXpo] - Opus - 54 kbps" -metadata:s:s title="[AniXpo Substations Alpha]" -c:a libopus -ab 40k -vbr 2 -ac 2 -level 3.1 "{out_put_file_name}" -y'
+    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}"  -i "https://te.legra.ph/file/e9408e71281cdcb017874.png" -map 0 -filter_complex "overlay =main_w-(overlay_w+10):main_h-(overlay_h+10)"  -c:v libx265 -crf {crf[0]} -c:s copy -s {resolution[0]} -preset faster -metadata title="Visit For More Movies [t.me/AniXpo]"  -metadata:s:v title="Visit Website[Anixpo] t.me/AniXpo] - 480p - HEVC - 8bit"  -metadata:s:a title="[Visit t.me/AniXpo] - Opus - 54 kbps" -metadata:s:s title="[AniXpo Substations Alpha]" -c:a libopus -ab 40k -vbr 2 -ac 2 -level 3.1 "{out_put_file_name}" -y'
  #For Ffmpeg Use
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
