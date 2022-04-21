@@ -4,6 +4,7 @@ class Config(object):
     SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
     # AHCompressBot....
     # sucks Dude
+    FFMPEG = get_config("FFMPEG", "")
     APP_ID = int(get_config("APP_ID", 12345))
     API_HASH = get_config("API_HASH", "")
     LOG_CHANNEL = get_config("LOG_CHANNEL")
