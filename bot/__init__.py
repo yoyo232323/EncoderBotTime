@@ -47,6 +47,7 @@ watermark = []
 resolution = []
 bit = []
 preset = []
+logz = []
 # senpai I am changing app string WHY???????
 pid_list = []
 app = Client(
