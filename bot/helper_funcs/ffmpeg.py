@@ -21,6 +21,7 @@ from bot import (
     FINISHED_PROGRESS_STR,
     UN_FINISHED_PROGRESS_STR,
     DOWNLOAD_LOCATION,
+    FFMPEG,
     crf,
     watermark,
     pid_list,
@@ -47,7 +48,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     bit.append("yuv420p")
     preset.append("")
     watermark.append("")
-    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}"  -i "https://te.legra.ph/file/e9408e71281cdcb017874.png" -map 0 -filter_complex "overlay =main_w-(overlay_w+10):main_h-(overlay_h+10)"  -c:v libx265 -crf {crf[0]} -c:s copy -s 640x480 -preset faster -c:a libopus -ab 48k "{out_put_file_name}" -y'
+    file_genertor_command = FFMPEG 
  #For Ffmpeg Use
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
