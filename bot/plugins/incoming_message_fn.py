@@ -45,8 +45,6 @@ os.system("wget https://te.legra.ph/file/ed0102d22b0b94cb89cda.jpg -O thumb.jpg"
 
 w = 1280
 h = 1720
-LOGZ
-
 logz.append('-1001752956767')
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
@@ -361,6 +359,8 @@ async def incoming_compress_message_f(update):
         caption=file_name_op,
         supports_streaming=True,
         duration=duration,
+        width=w,
+        height=h,
         thumb=thumb_image_path,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
