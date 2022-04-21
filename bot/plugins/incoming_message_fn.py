@@ -15,7 +15,8 @@ from bot import (
   UPDATES_CHANNEL,
   SESSION_NAME,
   data,
-  app  
+  app,
+  logz  
 )
 
 from bot.helper_funcs.ffmpeg import (
@@ -44,7 +45,9 @@ os.system("wget https://te.legra.ph/file/ed0102d22b0b94cb89cda.jpg -O thumb.jpg"
 
 w = 1280
 h = 1720
-LOGZ = '-1001752956767'
+LOGZ
+
+logz.append('-1001752956767')
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
 broadcast_ids = {}
