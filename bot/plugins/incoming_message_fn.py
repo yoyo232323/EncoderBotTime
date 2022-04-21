@@ -369,8 +369,23 @@ async def incoming_compress_message_f(update):
         )
       )
       await upload.forward(
-          chat_id=LOGZ,
+          chat_id=LOG_CHANNEL,
       )
+      upload = await bot.send_video(
+        chat_id=LOGZ,
+        video=o,
+        caption=file_name_op,
+        supports_streaming=True,
+        duration=duration,
+        thumb=thumb_image_path,
+        reply_to_message_id=update.message_id,
+        progress=progress_for_pyrogram,
+        progress_args=(
+          bot,
+          Localisation.UPLOAD_START,
+          sent_message,
+          u_start
+        )
       if(upload is None):
         try:
           await sent_message.edit_text(
