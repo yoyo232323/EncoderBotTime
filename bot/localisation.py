@@ -6,34 +6,34 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hello, \n\nThis is a Telegram <b>Video Encoder Bot</b>. \n\n<b>Please send me any Telegram Big Video file I will compress it as s small video file!</b> \n\n/help for More details. \n\nChannel : @FIERCENETWORK Made By @KajiuAF"
+    START_TEXT = "Hi,`{event.sender.first_name}` \n **Welcome To AniXcoder** \n **It Re-Encodes Videos With Latest Video And Audio Codecs Using** `FFMPEG`"
    
-    ABS_TEXT = " Please don't be selfish."
+    ABS_TEXT = "Please don't be selfish."
     
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "📥 Downloading ... 📥 \n"
+    DOWNLOAD_START = "**📥 Trying To Downloading 📥** \n"
     
     UPLOAD_START = "📤 Uploading ... 📤 \n"
     
-    COMPRESS_START = "📀 Trying to encode ... 📀"
+    COMPRESS_START = "🍘 Starting To Encode 🍘"
     
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     
-    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.95GB due to Telegram API limitations."
+    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload ⬆️ files greater than 1.95GB due to Telegram API Limitations."
     
     COMPRESS_SUCCESS = "©️ @FIERCENETWORK"
 
     COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Progress: {}%"
 
-    SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in the video / file."
+    SAVED_CUSTOM_THUMB_NAIL = "**Custom Thumbnail Saved**"
     
-    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
+    DEL_ETED_CUSTOM_THUMB_NAIL = "**✅ Custom Thumbnail Cleared Successfully.**"
     
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
     
-    SAVED_RECVD_DOC_FILE = "✅ Downloaded Successfully."
+    SAVED_RECVD_DOC_FILE = "**✅ Downloaded Successfully.**"
     
     CUSTOM_CAPTION_UL_FILE = " "
     
@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hi, I am Video Compressor Bot \n\n1. Send me your telegram big video file \n2. Reply to the file with: `/compress 50` \n\nSupport: @NIRUSAKI"
+        "**Hi, I Am AniXcoder Just Send Me Files And I Will Start Rencoding Them**"
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
