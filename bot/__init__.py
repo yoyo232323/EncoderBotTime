@@ -80,5 +80,5 @@ logging.getLogger("urllib3").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
 
 app.send_message(
-    chat_id=, "**I AM UP 😎**"
+    chat_id=AUTH_USERS, "**I AM UP 😎**"
 )
