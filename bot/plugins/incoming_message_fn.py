@@ -16,7 +16,8 @@ from bot import (
   SESSION_NAME,
   data,
   app,
-  logz  
+  logz,
+  LOGZ  
 )
 
 from bot.helper_funcs.ffmpeg import (
@@ -372,7 +373,7 @@ async def incoming_compress_message_f(update):
         )
       )
       await upload.forward(
-          chat_id=logz[0],
+          chat_id=LOGZ,
       )
       if(upload is None):
         try:
