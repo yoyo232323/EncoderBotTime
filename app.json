@@ -1,17 +1,13 @@
 {
-  "name": "ENCODER BOT",
+  "name": "ANIXCODER",
   "description": "Telegram's best Video Encoder Bot",
   "logo": "https://telegra.ph//file/d9d6d3d5bd820e1b5baae.jpg",
   "keywords": [
-    "Telegram",
-    "best",
-    "Video",
-    "Encoder",
-    "Bot"
+    "ANIXCODER"
   ],
-  "success_url": "https://t.me/linux_repo",
-  "website": "https://t.me/Discovery_Updates",
-  "repository": "https://github.com/AbirHasan2005/VideoCompress",
+  "success_url": "https://t.me/AniXpo",
+  "website": "https://t.me/Fiercenetwork",
+  "repository": "https://github.com/Nirusaki/Encoder-BotV5",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable VARs when in ENV mode",
@@ -21,6 +17,11 @@
       "description": "Keep this default",
       "value": "AHCompressBot",
       "required": true
+    },
+    "LOGZ": {
+      "description": "ADD Second Log Channel If You Want Them To Be Automatically Forwarded ",
+      "value": "",
+      "required": false
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string. Get this from @BotFather",
@@ -49,7 +50,7 @@
     },
     "AUTH_USERS": {
       "description": "Allow only pre-defined users to use this bot as Sudo User. Separate with Space. Just for using Admin Commands.",
-      "value": "1553219399",
+      "value": "",
       "required": true
     }
   },
