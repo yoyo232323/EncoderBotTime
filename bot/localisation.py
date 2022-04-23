@@ -6,16 +6,16 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hi, ANIKIDS \n <b>Welcome To AniXcoder</b> \n <b>It Re-Encodes Videos With Latest Video And Audio Codecs Using </u <u> FFMPEG </u"
+    START_TEXT = "Hi,<u>ANIKIDS</u> \n <b>Welcome To AniXcoder</b> \n <b>It Re-Encodes Videos With Latest Video And Audio Codecs Using </b> <u> FFMPEG </u>"
    
     ABS_TEXT = "Please don't be selfish."
     
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "<b>📥 Trying To Downloading 📥</b \n"
+    DOWNLOAD_START = "<b>📥 Trying To Downloading 📥</b> \n"
     
-    UPLOAD_START = "<b>📤 Uploading ... 📤 </b>\n"
+    UPLOAD_START = "<b>📤 Uploading 📤 </b> \n"
     
     COMPRESS_START = "<b>🍘 Starting To Encode 🍘</b>"
     
@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "**Hi, I Am AniXcoder Just Send Me Files And I Will Start Rencoding Them**"
+        "<b>Hi, I Am AniXcoder Just Send Me Files And I Will Start Rencoding Them</b>"
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
