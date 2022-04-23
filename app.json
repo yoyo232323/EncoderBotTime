@@ -23,6 +23,11 @@
       "value": "",
       "required": false
     },
+    "FFMPEG": {
+      "description": "",
+      "value": "",
+      "required": true
+    },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string. Get this from @BotFather",
       "value": "",
