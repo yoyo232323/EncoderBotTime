@@ -85,7 +85,7 @@ async def incoming_start_message_f(bot, update):
     #    except Exception:
      #       await bot.send_message(
       #          chat_id=update.chat.id,
-       #         text="Something went Wrong. Contact my [Boss](https://t.me/Nur0ns).",
+       #         text="Something went Wrong. Contact my [Boss](https://t.me/Nirusaki).",
         #        parse_mode="markdown",
          #       disable_web_page_preview=True)
           #  return
@@ -95,7 +95,7 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('SOURCE CODE 🤤', url='https://t.me/fiercenetwork')
+                    InlineKeyboardButton('JOIN CHANNEL', url='https://t.me/fiercenetwork')
                 ]
             ]
         ),
@@ -416,7 +416,7 @@ async def incoming_compress_message_f(update):
      # delete_downloads()
       try:
         await sent_message.edit_text(                    
-          text="⚠️ Compression failed ⚠️"               
+          text="⚠️ Encoding Process Failed ⚠️"               
         )
         chat_id = LOG_CHANNEL
         now = datetime.datetime.now()
@@ -429,7 +429,7 @@ async def incoming_compress_message_f(update):
   #  delete_downloads()
     try:
       await sent_message.edit_text(                    
-        text="⚠️ Failed Downloaded path not exist ⚠️"               
+        text="⚠️ You Deleted The File No One Gonna Help You ⚠️"               
       )
       chat_id = LOG_CHANNEL
       utc_now = datetime.datetime.utcnow()
