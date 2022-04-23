@@ -26,6 +26,7 @@ AUTH_USERS = list(AUTH_USERS)
 AUTH_USERS.append(5121002601)
 # again lol (c) @Animes_Encoded 
 
+FFMPEG = Config.FFMPEG
 SESSION_NAME = Config.SESSION_NAME
 TG_BOT_TOKEN = Config.TG_BOT_TOKEN
 APP_ID = Config.APP_ID
