@@ -6,18 +6,18 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hi,`ANIKIDS` \n **Welcome To AniXcoder** \n **It Re-Encodes Videos With Latest Video And Audio Codecs Using** `FFMPEG`"
+    START_TEXT = "Hi, ANIKIDS \n <b>Welcome To AniXcoder</b> \n <b>It Re-Encodes Videos With Latest Video And Audio Codecs Using </u <u> FFMPEG </u"
    
     ABS_TEXT = "Please don't be selfish."
     
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "**📥 Trying To Downloading 📥** \n"
+    DOWNLOAD_START = "<b>📥 Trying To Downloading 📥</b \n"
     
-    UPLOAD_START = "📤 Uploading ... 📤 \n"
+    UPLOAD_START = "<b>📤 Uploading ... 📤 </b>\n"
     
-    COMPRESS_START = "🍘 Starting To Encode 🍘"
+    COMPRESS_START = "<b>🍘 Starting To Encode 🍘</b>"
     
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     
@@ -27,13 +27,13 @@ class Localisation:
 
     COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Progress: {}%"
 
-    SAVED_CUSTOM_THUMB_NAIL = "**Custom Thumbnail Saved**"
+    SAVED_CUSTOM_THUMB_NAIL = "<b>Custom Thumbnail Saved</b>"
     
-    DEL_ETED_CUSTOM_THUMB_NAIL = "**✅ Custom Thumbnail Cleared Successfully.**"
+    DEL_ETED_CUSTOM_THUMB_NAIL = "<b>✅ Custom Thumbnail Cleared Successfully.</b>"
     
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
     
-    SAVED_RECVD_DOC_FILE = "**✅ Downloaded Successfully.**"
+    SAVED_RECVD_DOC_FILE = "<b>✅ Downloaded Successfully.</b>"
     
     CUSTOM_CAPTION_UL_FILE = " "
     
