@@ -234,7 +234,33 @@ async def incoming_compress_message_f(update):
       saved_file_path = video
       eni = saved_file_path.split("/")[-1]
       xnx = eni.split(".")[-1]
-      file_name_op = eni.replace(f".{xnx}", " [@FIERCENETWORK].mkv")
+      opm = eni.replace(f".{xnx}", " [@FIERCENETWORK].mkv")
+      if "BTG" in opm:
+       opm = opm.replace("BTG", " ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace(".mkv" ," ")
+       opm = opm.replace(".mp4" ," ")
+      elif "ToonWorld4All" in opm:
+       opm = opm.replace("ToonWorld4All", " ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace(".mkv" ," ")
+       opm = opm.replace(".mp4" ," ")
+      elif "AnimeRG" in opm:
+       opm = opm.replace("AnimeRG", " ")
+       opm = opm.replace("pseudo"," ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace(".mkv" ," ")
+       opm = opm.replace(".mp4" ," ")
+      elif "[Kayoanime]" or "Kayoanime" in opm:
+       opm = opm.replace("AnimeRG", " ")
+       opm = opm.replace("pseudo"," ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace(".mkv" ," ")
+       opm = opm.replace(".mp4" ," ")
+      else:
+       opm = opm.replace("_", " " )
+       opm = opm.replace(".mkv" ," ")
+       opm = opm.replace(".mp4" ," ")   
       LOGGER.info(saved_file_path)  
       LOGGER.info(video)
       if( video is None ):
@@ -357,7 +383,7 @@ async def incoming_compress_message_f(update):
       upload = await bot.send_video(
         chat_id=update.chat.id,
         video=o,
-        caption=file_name_op,
+        caption=opm,
         supports_streaming=True,
         duration=duration,
         width=w,
