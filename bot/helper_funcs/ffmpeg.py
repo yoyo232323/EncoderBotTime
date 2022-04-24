@@ -12,6 +12,8 @@ import re
 import json
 import subprocess
 import math
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from bot.helper_funcs.display_progress import (
   TimeFormatter
@@ -212,3 +214,9 @@ async def take_screen_shot(video_file, output_directory, ttl):
     else:
         return None
 # senpai I edited this,  maybe if it is wrong correct it 
+def get_width_height(filepath):
+    metadata = extractMetadata(createParser(filepath))
+    if metadata.has("width") and metadata.has("height"):
+        return metadata.get("width"), metadata.get("height")
+    else:
+        return 1280, 720
