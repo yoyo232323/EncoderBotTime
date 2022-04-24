@@ -235,33 +235,56 @@ async def incoming_compress_message_f(update):
       eni = saved_file_path.split("/")[-1]
       xnx = eni.split(".")[-1]
       opm = eni.replace(f".{xnx}", " [@FIERCENETWORK].mkv")
-      if "BTG" or "[BTG]" or "[BGT]" or "BGT" in opm:
+      if "BTG" in opm:
        opm = opm.replace("BTG", " ")
-       opm = opm.replace("[BTG]", " ")
        opm = opm.replace(".", " ") 
-       opm = opm.replace("[BGT]", " ")
-       opm = opm.replace("BGT", " ")
        opm = opm.replace("_", " " )
        opm = opm.replace("-", " ")
-       opm = opm.replace(".mkv" ," ")
-       opm = opm.replace(".mp4" ," ")
-      elif "ToonWorld4All" or "[ToonWorld4All]" in opm:
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
+      elif "[BTG]" in opm:
+       opm = opm.replace("[BTG]", " ")
+       opm = opm.replace(".", " ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace("-", " ")
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
+      elif "[BGT]" in opm:
+       opm = opm.replace("[BGT]", " ")
+       opm = opm.replace(".", " ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace("-", " ")
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
+      elif "BGT" in opm:
+       opm = opm.replace("BGT", " ")
+       opm = opm.replace(".", " ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace("-", " ")
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")  
+      elif "ToonWorld4All" in opm:
        opm = opm.replace("ToonWorld4All", " ")
+       opm = opm.replace(".", " ")
+       opm = opm.replace("_", " " )
+       opm = opm.replace("-", " ")
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
+      elif "[ToonWorld4All]" in opm:
        opm = opm.replace("[ToonWorld4All]", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
        opm = opm.replace("-", " ")
-       opm = opm.replace(".mkv" ," ")
-       opm = opm.replace(".mp4" ," ")
-      elif "AnimeRG" or "[AnimeKaizoku]" in opm:
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
+      elif "AnimeRG" in opm:
        opm = opm.replace("AnimeRG", " ")
-       opm = opm.replace("[AnimeKaizoku]", " ")
        opm = opm.replace("pseudo"," ")
        opm = opm.replace("_", " " )
        opm = opm.replace("-", " ")
        opm = opm.replace(".", " ")
-       opm = opm.replace(".mkv" ," ")
-       opm = opm.replace(".mp4" ," ")
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
       elif "[Kayoanime]" or "Kayoanime" in opm:
        opm = opm.replace("[Kayoanime]", " ")
        opm = opm.replace("Kayoanime"," ")
