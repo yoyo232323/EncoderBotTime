@@ -16,15 +16,15 @@ from bot import (
   SESSION_NAME,
   data,
   app,
-  logz,
-  get_width_height,  
+  logz,  
   LOGZ  
 )
 
 from bot.helper_funcs.ffmpeg import (
   convert_video,
   media_info,
-  take_screen_shot
+  take_screen_shot,
+  get_width_height  
 )
 
 ## COWARDS ##
