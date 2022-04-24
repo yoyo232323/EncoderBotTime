@@ -17,6 +17,7 @@ from bot import (
   data,
   app,
   logz,
+  get_width_height,  
   LOGZ  
 )
 
@@ -447,6 +448,7 @@ async def incoming_compress_message_f(update):
       os.path.dirname(os.path.abspath(saved_file_path)),
       (duration / 2)
     )
+    width, height = get_width_height(saved_file_path)
     chat_id = LOG_CHANNEL
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
@@ -493,8 +495,8 @@ async def incoming_compress_message_f(update):
         caption=opm,
         supports_streaming=True,
         duration=duration,
-        width=w,
-        height=h,
+        width=width,
+        height=height,
         thumb=thumb_image_path,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
