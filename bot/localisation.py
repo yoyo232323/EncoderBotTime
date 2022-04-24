@@ -6,7 +6,7 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hi,<u>ANIKIDS</u> \n <b>Welcome To AniXcoder</b> \n <b>It Re-Encodes Videos With Latest Video And Audio Codecs Using </b> <u> FFMPEG </u>"
+    START_TEXT = "Hi,<u>ANIKIDS</u>\n <b>Welcome To AniXcoder</b> \n <b>It Re-Encodes Videos With Latest Video And Audio Codecs Using</b> <u>FFMPEG</u>"
    
     ABS_TEXT = "Please don't be selfish."
     
