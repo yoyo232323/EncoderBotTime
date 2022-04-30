@@ -10,14 +10,8 @@ from bot import (
     TG_BOT_TOKEN,
     BOT_USERNAME,
     SESSION_NAME,
-    
     data,
-    app,
-    crf,
-    watermark,
-    resolution,
-    bit,
-    preset
+    app
 )
 from bot.helper_funcs.utils import add_task, on_task_complete
 from pyrogram import Client, filters
@@ -38,7 +32,7 @@ from bot.plugins.status_message_fn import (
 
 from bot.commands import Command
 from bot.plugins.call_back_button_handler import button
-sudo_users = "1553219399" 
+sudo_users = "5121002601" 
 
 uptime = dt.now()
 
@@ -81,27 +75,12 @@ if __name__ == "__main__" :
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("NIKAL LAUDA !!")
-        query = await message.reply_text("Added to Queue ⏰...\nPlease be patient, Compress will start soon", quote=True)
+        query = await message.reply_text("Added to Queue ⏰...\nPlease Be Patient Encoding Will Start Soon", quote=True)
         data.append(message.reply_to_message)
         if len(data) == 1:
          await query.delete()   
          await add_task(message.reply_to_message)     
-            
-    @app.on_message(filters.incoming & filters.command(["480p", f"480p@{BOT_USERNAME}"]))
-    async def help_message(app, message):
-        if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot")
-        await message.reply_text("480p Mode has been set", quote=True)
-        cmd1.insert(0, "-pix_fmt yuv420p -preset medium -s 854x480 -crf 28 -profile:a  aac_he_v2 -c:a libopus -ac 1 -vbr 2 -ab 60k -c:s copy -y")
-                 
-            
-    @app.on_message(filters.incoming & filters.command(["1080p", f"1080p@{BOT_USERNAME}"]))
-    async def help_message(app, message):
-        if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot")
-        await message.reply_text("1080p Mode has been set", quote=True)
-        cmd1.insert(0, "-pix_fmt yuv420p10 -preset veryfast -s 1920x1080 -crf 25 -c:a libopus -ab 128k -c:s copy -y")
-                         
+                                     
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
     async def restarter(app, message):
       await message.reply_text("Rebooting ...")
@@ -111,8 +90,7 @@ if __name__ == "__main__" :
     async def restarter(app, message):
       data.clear()
       await message.reply_text("Successfully cleared Queue ...")
-         
-        
+              
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
@@ -126,8 +104,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & (filters.photo))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot")
-        os.system('rm thumb.jpg')
+            return await message.reply_text("Nikal Lauda Pehli Fursat Mei Nikal")
         await message.download(file_name='/app/thumb.jpg')
         await message.reply_text('Thumbnail Added')
         
