@@ -126,7 +126,11 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["help", f"help@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await message.reply_text("Hi, I am <b>Video Encoder bot</b>\n\n➥ Send me your telegram files\n➥ I will encode them one by one as I have <b>queue feature</b>\n➥ Just send me the jpg/pic and it will be set as your custom thumbnail \n➥ For ffmpeg lovers - u can change crf by /eval crf.insert(0, 'crf value')\n➥ Join @FIERCENETWORK for animes \n\n🏷<b>Maintained By: @NIRUSAKI</b>", quote=True)
-  
+        
+    @app.on_message(filters.incoming & filters.command(["cmds", f"cmds@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        await message.reply_text("start - To The Start \n cmds - To Repeat This List \n compress - To Compress The Video Manually \n eval - Solve An Argument \n <b>THUMB FEATURES COMING VERY SOON </b> \n clear - Clear The Queue \n restart - Restart The Bot  ", quote=True)
+    
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await upload_log_file(app, message)
@@ -145,5 +149,5 @@ if __name__ == "__main__" :
     )
     app.add_handler(call_back_button_handler)
 
-    # run the APPlication
+    # Run The Application
     app.run()
