@@ -13,14 +13,9 @@ from bot import (
     LOG_FILE_ZZGEVC,
     MAX_MESSAGE_LENGTH,
     AUTH_USERS,
-    crf,
-    logz,
-    watermark,
     data,
-    resolution,
     pid_list,
-    bit,
-    preset
+    FFMPEG
 )
 
 
