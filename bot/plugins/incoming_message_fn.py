@@ -15,8 +15,7 @@ from bot import (
   UPDATES_CHANNEL,
   SESSION_NAME,
   data,
-  app,
-  logz,  
+  app, 
   LOGZ  
 )
 
@@ -45,9 +44,6 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 #)
 os.system("wget https://te.legra.ph/file/ed0102d22b0b94cb89cda.jpg -O thumb.jpg")
 
-w = 1280
-h = 1720
-logz.append('-1001752956767')
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
 broadcast_ids = {}
@@ -240,77 +236,77 @@ async def incoming_compress_message_f(update):
        opm = opm.replace("BTG", " ")
        opm = opm.replace(".", " ") 
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "[BTG]" in opm:
        opm = opm.replace("[BTG]", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "[BGT]" in opm:
        opm = opm.replace("[BGT]", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "BGT" in opm:
        opm = opm.replace("BGT", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")  
       elif "ToonWorld4All" in opm:
        opm = opm.replace("ToonWorld4All", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "[ToonWorld4All]" in opm:
        opm = opm.replace("[ToonWorld4All]", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "AnimeRG" in opm:
        opm = opm.replace("AnimeRG", " ")
        opm = opm.replace("pseudo"," ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace(".", " ")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "[Kayoanime]" in opm:
        opm = opm.replace("[Kayoanime]", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace(".", " ")
-       opm = opm.replace(".mkv" ," ")
-       opm = opm.replace(".mp4" ," ")
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")
       elif "Kayoanime" in opm:
        opm = opm.replace("[Kayoanime]", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace(".", " ")
-       opm = opm.replace(".mkv" ," ")
-       opm = opm.replace(".mp4" ," ")  
+       opm = opm.replace("mkv" ," ")
+       opm = opm.replace("mp4" ," ")  
       elif "[RTI]" in opm:
        opm = opm.replace("[RTI]", " ")
        opm = opm.replace(".", " ")
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("_", " " )
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "RTI" in opm:
        opm = opm.replace("RTI", " ")
        opm = opm.replace(".", " ")
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("_", " " )
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")  
@@ -318,55 +314,55 @@ async def incoming_compress_message_f(update):
        opm = opm.replace("MoviesVerse", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "KatMovieHD" in opm:
        opm = opm.replace("KatMovieHD", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "TheDNK" in opm:
        opm = opm.replace("TheDNK", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "HENiL" in opm:
        opm = opm.replace("HENiL", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ") 
       elif "PSA" in opm:
        opm = opm.replace("PSA", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "Pahe" in opm:
        opm = opm.replace("Pahe", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")
       elif "Telly" in opm:
        opm = opm.replace("Telly", " ")
        opm = opm.replace(".", " ")
        opm = opm.replace("_", " " )
-       opm = opm.replace("-", "©")
+       opm = opm.replace("-", "-")
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")  
       else:
        opm = opm.replace("_", " " )
        opm = opm.replace(".", " ")
-       opm = opm.replace("-", "©") 
+       opm = opm.replace("-", "-") 
        opm = opm.replace("mkv" ," ")
        opm = opm.replace("mp4" ," ")   
       LOGGER.info(saved_file_path)  
@@ -374,7 +370,7 @@ async def incoming_compress_message_f(update):
       if( video is None ):
         try:
           await sent_message.edit_text(
-            text="Download stopped"
+            text="Download Stopped 🛑"
           )
           chat_id = LOG_CHANNEL
           utc_now = datetime.datetime.utcnow()
@@ -388,7 +384,7 @@ async def incoming_compress_message_f(update):
         except:
           pass
        # delete_downloads()
-        LOGGER.info("Download stopped")
+        LOGGER.info("Download Stopped 🛑")
         return
   except (ValueError) as e:
       try:
@@ -497,6 +493,7 @@ async def incoming_compress_message_f(update):
         duration=duration,
         width=width,
         height=height,
+        file_name=opm,
         thumb=thumb_image_path,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
