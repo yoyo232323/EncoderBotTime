@@ -1,4 +1,3 @@
-from bot import cmd1
 from datetime import datetime as dt
 import os
 from bot import (
@@ -83,19 +82,19 @@ if __name__ == "__main__" :
                                      
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
     async def restarter(app, message):
-      await message.reply_text("Rebooting ...")
+      await message.reply_text("Restarting The Bot Please Wait ⌚")
       quit(1)
         
     @app.on_message(filters.incoming & filters.command(["clear", f"clear@{BOT_USERNAME}"]))
     async def restarter(app, message):
       data.clear()
-      await message.reply_text("Successfully cleared Queue ...")
+      await message.reply_text("Successfully Cleared Queue...")
               
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You are not authorised to use this bot")
-        query = await message.reply_text("Added to Queue ⏰...\nPlease be patient, Compress will start soon", quote=True)
+        query = await message.reply_text("Added to Queue ⏰...\nPlease Be Patient Encoding Will Start Soon", quote=True)
         data.append(message)
         if len(data) == 1:
          await query.delete()   
@@ -138,7 +137,7 @@ if __name__ == "__main__" :
       ed = dt.now()
       v = ts(int((ed - uptime).seconds) * 1000)
       ms = (ed - stt).microseconds / 1000
-      p = f"🌋Pɪɴɢ = {ms}ms"
+      p = f"🌋 PING = {ms}ms"
       await message.reply_text(v + "\n" + p)
 
     call_back_button_handler = CallbackQueryHandler(
