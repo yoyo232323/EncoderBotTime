@@ -13,6 +13,7 @@ from bot import (
     app
 )
 from bot.helper_funcs.utils import add_task, on_task_complete
+import pyr
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 
