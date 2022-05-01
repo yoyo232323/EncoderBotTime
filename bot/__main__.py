@@ -83,8 +83,11 @@ if __name__ == "__main__" :
     async def rmthumb(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You Are Not Authorised To Use This Bot")
-        os.system('rm thumb.jpg')
-        await message.reply_text('Custom Thumbnail Removed')
+        if exists('/app/thumb.jpg'):
+            os.system('rm thumb.jpg')
+            await message.reply_text('Custom Thumbnail Removed 📸')
+        else:
+            await message.reply_text('No Custom Thumbnail Was Found 📸')
         
     @app.on_message(filters.incoming & filters.command(["clear", f"clear@{BOT_USERNAME}"]))
     async def restarter(app, message):
@@ -94,7 +97,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot")
+            return await message.reply_text("You Are Not Authorised To Use This Bot")
         query = await message.reply_text("Added to Queue ⏰...\nPlease Be Patient Encoding Will Start Soon", quote=True)
         data.append(message)
         if len(data) == 1:
