@@ -1,3 +1,4 @@
+#NIRUSAKI#
 from datetime import datetime as dt
 import os
 from bot import (
@@ -51,18 +52,11 @@ def ts(milliseconds: int) -> str:
 
 
 if __name__ == "__main__" :
-    # create download directory, if not exist
+    
     if not os.path.isdir(DOWNLOAD_LOCATION):
         os.makedirs(DOWNLOAD_LOCATION)
-    #
-    
-    
-    #
+        
     app.set_parse_mode("html")
-    #
-    # STATUS ADMIN Command
-
-    # START command
     incoming_start_message_handler = MessageHandler(
         incoming_start_message_f,
         filters=filters.command(["start", f"start@{BOT_USERNAME}"])
@@ -73,7 +67,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["compress", f"compress@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("NIKAL LAUDA !!")
+            return await message.reply_text("You Are Not Authorised To Use This Bot 🗑")
         query = await message.reply_text("Added to Queue ⏰...\nPlease Be Patient Encoding Will Start Soon", quote=True)
         data.append(message.reply_to_message)
         if len(data) == 1:
@@ -103,7 +97,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & (filters.photo))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("Nikal Lauda Pehli Fursat Mei Nikal")
+            return await message.reply_text("You Are Not Authorised To Use This Bot 🗑")
         await message.download(file_name='/app/thumb.jpg')
         await message.reply_text('Thumbnail Added')
         
@@ -125,11 +119,11 @@ if __name__ == "__main__" :
    
     @app.on_message(filters.incoming & filters.command(["help", f"help@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await message.reply_text("Hi, I am <b>Video Encoder bot</b>\n\n➥ Send me your telegram files\n➥ I will encode them one by one as I have <b>queue feature</b>\n➥ Just send me the jpg/pic and it will be set as your custom thumbnail \n➥ For ffmpeg lovers - u can change crf by /eval crf.insert(0, 'crf value')\n➥ Join @FIERCENETWORK for animes \n\n🏷<b>Maintained By: @NIRUSAKI</b>", quote=True)
+        await message.reply_text("┏━━━━━━━━━━━━━━━━━\n┣✋ Hello I Am AniXcoder\n┣🧳Just Send Me Files And I Will Start Encoding\n┣📸I Will Automatically Generate Thumbnail\n┣🦾I Can Also Auto Rename\n┣🦾Created And Maintaine By\n┣@NIRUSAKI_MARVALE & @FIERCE_MARVALE\n┗━━━━━━━━━━━━━━━━━", quote=True)
         
     @app.on_message(filters.incoming & filters.command(["cmds", f"cmds@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await message.reply_text("start - To The Start \n cmds - To Repeat This List \n compress - To Compress The Video Manually \n eval - Solve An Argument \n <b>THUMB FEATURES COMING VERY SOON </b> \n clear - Clear The Queue \n restart - Restart The Bot  ", quote=True)
+        await message.reply_text("┏━━━━━━━━━━━━━━━━━\n┣🚦Start - To The Start\n┣Cmds- To Repeat This List\n┣ Compress - To Compress The Video Manually\n┣Eval - Solve An Argument\n┣THUMB FEATURES COMING VERY SOON\n┣Clear - Clear The Queue\n┣Restart - Restart The Bot\n┗━━━━━━━━━━━━━━━━━", quote=True)
     
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
@@ -149,5 +143,4 @@ if __name__ == "__main__" :
     )
     app.add_handler(call_back_button_handler)
 
-    # Run The Application
     app.run()
