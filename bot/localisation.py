@@ -1,17 +1,12 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) @Nirusaki
-
+#Nirusaki
 from bot.get_cfg import get_config
 
-
 class Localisation:
-    START_TEXT = "Hi,<u>ANIKIDS</u>\n <b>Welcome To AniXcoder</b> \n <b>It Re-Encodes Videos With Latest Video And Audio Codecs Using</b> <u>FFMPEG</u>"
+    START_TEXT = "┏━━━━━━━━━━━━━━━━━\n┣Hi,AniKids Welcome To AniXcoder\n┣I Rencode Video Using FFMPEG\n┣I Can Auto Rename Videos┣Master @NIRUSAKI_MARVALE\n┗━━━━━━━━━━━━━━━━━"
    
     ABS_TEXT = "Please don't be selfish."
     
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
-    
     
     DOWNLOAD_START = "<b>📥 Trying To Downloading 📥</b> \n"
     
@@ -19,7 +14,7 @@ class Localisation:
     
     COMPRESS_START = "<b>🍘 Starting To Encode 🍘</b>"
     
-    RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
+    RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, Trying To Upload."
     
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload ⬆️ files greater than 1.95GB due to Telegram API Limitations."
     
@@ -37,7 +32,7 @@ class Localisation:
     
     CUSTOM_CAPTION_UL_FILE = " "
     
-    NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found."
+    NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom Thumbnail Found."
     
     NO_VOID_FORMAT_FOUND = "no-one gonna help you\n{}"
     
