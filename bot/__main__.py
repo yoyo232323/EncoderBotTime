@@ -83,7 +83,7 @@ if __name__ == "__main__" :
     async def rmthumb(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("You Are Not Authorised To Use This Bot")
-        if exists('/app/thumb.jpg'):
+        if os.path.exists('/app/thumb.jpg'):
             os.system('rm thumb.jpg')
             await message.reply_text('Custom Thumbnail Removed 📸')
         else:
