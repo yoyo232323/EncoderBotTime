@@ -1,17 +1,9 @@
-
-# the logging things
+#NIRUSAKI
 import logging
 from logging.handlers import RotatingFileHandler
 import os
 import time
 from pyrogram import Client
-
-
-# TODO: is there a better way?
-
-
-
-
 from bot.config import Config
 
 AUTH_USERS = set(Config.AUTH_USERS)
