@@ -8,7 +8,7 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fnirusaki%2Fencoder-bot&envs=API_HASH%2CAPP_ID%2CAUTH_USERS%2CENV%2CLOG_CHANNEL%2CSESSION_NAME%2CTG_BOT_TOKEN&API_HASHDesc=Get+this+value+from+https%3A%2F%2Fmy.telegram.org+Or+%40ApiScrapperbot&APP_IDDesc=Get+this+value+from+https%3A%2F%2Fmy.telegram.org+Or+%40ApiScrapperbot&AUTH_USERSDesc=Allow+only+pre-defined+users+to+use+this+bot+as+Sudo+User.+Separate+with+Space.+Just+for+using+Admin+Commands.&ENVDesc=Setting+this+to+ANYTHING+will+enable+VARs+when+in+ENV+mode&LOG_CHANNELDesc=Your+Bot%27s+Log+Channel%27s+Username+Without+%40.&SESSION_NAMEDesc=Keep+this+default&TG_BOT_TOKENDesc=Your+bot+token%2C+as+a+string.+Get+this+from+%40BotFather&ENVDefault=ANYTHING)
 
-<p align="center"><a href="https://t.me/Anixpo"><img src="https://te.legra.ph/file/2ebf402cdef8c27ab4648.jpg" width="300"></a></p> 
+<p align="center"><a href="https://t.me/Anixpo"><img src="https://te.legra.ph/file/2ebf402cdef8c27ab4648.jpg" width="400"></a></p> 
 <h1 align="center"><b>AniXcoder 🇮🇳 </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Encoder Bot.</h4>
 
