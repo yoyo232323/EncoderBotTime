@@ -1,3 +1,4 @@
+#NIRUSAKI
 from bot.helper_funcs.utils import on_task_complete, add_task
 from bot import (
     AUTH_USERS,
@@ -17,9 +18,6 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 LOGGER = logging.getLogger(__name__)
-
-#from bot.helper_funcs.admin_check import AdminCheck
-
 
 async def button(bot, update: CallbackQuery):
     cb_data = update.data
