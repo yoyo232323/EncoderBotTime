@@ -79,6 +79,13 @@ if __name__ == "__main__" :
       await message.reply_text("Restarting The Bot Please Wait ⌚")
       quit(1)
         
+    @app.on_message(filters.incoming & filters.command(["delthumb", f"delthumb@{BOT_USERNAME}"]))
+    async def rmthumb(app, message):
+        if message.chat.id not in AUTH_USERS:
+            return await message.reply_text("You Are Not Authorised To Use This Bot")
+        os.system('rm thumb.jpg')
+        await message.reply_text('Custom Thumbnail Removed')
+        
     @app.on_message(filters.incoming & filters.command(["clear", f"clear@{BOT_USERNAME}"]))
     async def restarter(app, message):
       data.clear()
