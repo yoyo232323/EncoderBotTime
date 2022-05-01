@@ -16,7 +16,7 @@ TG_BOT_TOKEN = Config.TG_BOT_TOKEN
 APP_ID = Config.APP_ID
 API_HASH = Config.API_HASH
 LOGZ = Config.LOGZ
-LOG_CHANNEL = Config.LOG_CHANNEL # make sure to us this 
+LOG_CHANNEL = Config.LOG_CHANNEL
 DOWNLOAD_LOCATION = "/app/downloads"
 FREE_USER_MAX_FILE_SIZE = 2097152000
 MAX_MESSAGE_LENGTH = 4096
@@ -27,7 +27,6 @@ LOG_FILE_ZZGEVC = "Log.txt"
 BOT_USERNAME = Config.BOT_USERNAME 
 UPDATES_CHANNEL = "botlogas"
 data = []
-# senpai I am changing app string WHY???????
 pid_list = []
 app = Client(
         SESSION_NAME,
