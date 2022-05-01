@@ -298,6 +298,10 @@ async def incoming_compress_message_f(update):
       os.path.dirname(os.path.abspath(saved_file_path)),
       (duration / 2)
     )
+    if os.path.exists('/app/thumb.jpg'):
+        thumbnailed = "thumb.jpg"
+    else:
+        thumbnailed = thumb_image_path
     width, height = get_width_height(saved_file_path)
     chat_id = LOG_CHANNEL
     utc_now = datetime.datetime.utcnow()
@@ -348,7 +352,7 @@ async def incoming_compress_message_f(update):
         width=width,
         height=height,
         file_name=opm,
-        thumb=thumb_image_path,
+        thumb=thumbnailed,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
         progress_args=(
