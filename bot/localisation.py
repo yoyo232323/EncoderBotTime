@@ -2,7 +2,7 @@
 from bot.get_cfg import get_config
 
 class Localisation:
-    START_TEXT = "┏━━━━━━━━━━━━━━━━━\n┣Hi,AniKids Welcome To AniXcoder\n┣I Rencode Video Using FFMPEG\n┣I Can Auto Rename Videos┣Master @NIRUSAKI_MARVALE\n┗━━━━━━━━━━━━━━━━━"
+    START_TEXT = "┏━━━━━━━━━━━━━━━━━\n┣Hi,AniKids Welcome To AniXcoder\n┣I Rencode Video Using FFMPEG\n┣I Can Auto Rename Videos\n┣Master @NIRUSAKI_MARVALE\n┗━━━━━━━━━━━━━━━━━"
    
     ABS_TEXT = "Please don't be selfish."
     
