@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) gautamajay52 | Shrimadhav U K | @AbirHasan2005
-
-# the logging things
+# NIRUSAKI
 import logging
 logging.basicConfig(
     level=logging.DEBUG,
@@ -10,7 +6,6 @@ logging.basicConfig(
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
-#
 
 import asyncio
 import math
