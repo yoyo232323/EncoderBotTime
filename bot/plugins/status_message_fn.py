@@ -18,16 +18,12 @@ from bot import (
     FFMPEG
 )
 
-
 from bot.commands import Command
 from bot.localisation import Localisation
 from bot.helper_funcs.display_progress import (
     TimeFormatter,
     humanbytes
 )
-
-
-
 
 async def exec_message_f(client, message):
   if message.from_user.id in AUTH_USERS:
