@@ -151,12 +151,13 @@ async def upload_dir(client, message):
         if message.reply_to_message:
           replyid = message.reply_to_message.message_id
   if os.path.exists(cmd1):
+    xhamster = await message.reply_text('Uploading The File 📁')
     await client.send_document(
                 chat_id=message.chat.id,
                 document=cmd1,
                 caption=cmd1,
                 reply_to_message_id=replyid,
-                progress_args=("Uploading ...")
-            )
+        )
+    await xhamster.delete_messages
   else:
      await message.reply_text(f"Directory Not Found ```{cmd1}```")
