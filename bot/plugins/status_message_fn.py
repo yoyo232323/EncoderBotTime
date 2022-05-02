@@ -129,7 +129,7 @@ async def eval_message_f(client, message):
 async def aexec(code, client, message):
     exec(
         f"async def __aexec(client, message): "
-        + "".join(f"\n ```{l}```" for l in code.split("\n"))
+        + "".join(f"\n {l}" for l in code.split("\n"))
     )
     return await locals()["__aexec"](client, message)
 
@@ -141,3 +141,22 @@ async def upload_log_file(client, message):
     )
   else:
     return
+
+async def upload_dir(client, message):
+  if message.from_user.id in AUTH_USERS:
+    if True:
+        cmd1 = message.text.split(" ", maxsplit=1)[1]
+        print(cmd1)
+        replyid = message.message_id
+        if message.reply_to_message:
+          replyid = message.reply_to_message.message_id
+  if os.path.exists(cmd1):
+    await client.send_document(
+                chat_id=message.chat.id,
+                document=cmd1,
+                caption=cmd1,
+                reply_to_message_id=replyid,
+                progress_args=("Uploading ...")
+            )
+  else:
+     await message.reply_text("Directory Not Found",cmd1)
