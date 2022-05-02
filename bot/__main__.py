@@ -138,7 +138,7 @@ if __name__ == "__main__" :
         
     @app.on_message(filters.incoming & filters.command(["cmds", f"cmds@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await message.reply_text("┏━━━━━━━━━━━━━━━━━\n┣🚦Start - To The Start\n┣Cmds- To Repeat This List\n┣ Compress - To Compress The Video Manually\n┣Eval - Solve An Argument\n┣Send Any Photo To Set As Thumbnail\n┣Delthumb - To Delete Thumbnail\n┣Ul - To Upload Fil Manually\n┣Clear - Clear The Queue\n┣Restart - Restart The Bot\n┗━━━━━━━━━━━━━━━━━", quote=True)
+        await message.reply_text("┏━━━━━━━━━━━━━━━━━\n┣Start - To The Start\n┣Cmds- To Repeat This List\n┣ Compress - To Compress The Video Manually\n┣Eval - Solve An Argument\n┣Send Any Photo To Set As Thumbnail\n┣Delthumb - To Delete Thumbnail\n┣Ul - To Upload Fil Manually\n┣Clear - Clear The Queue\n┣Bash To Execute Linux Commands\n┣Restart - Restart The Bot\n┗━━━━━━━━━━━━━━━━━", quote=True)
     
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
