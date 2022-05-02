@@ -159,4 +159,4 @@ async def upload_dir(client, message):
                 progress_args=("Uploading ...")
             )
   else:
-     await message.reply_text("Directory Not Found",cmd1)
+     await message.reply_text("Directory Not Found ```{cmd1}```")
