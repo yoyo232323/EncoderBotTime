@@ -27,7 +27,8 @@ from bot.plugins.incoming_message_fn import (
 from bot.plugins.status_message_fn import (
     eval_message_f,
     exec_message_f,
-    upload_log_file
+    upload_log_file,
+    upload_dir
 )
 
 from bot.commands import Command
@@ -93,6 +94,10 @@ if __name__ == "__main__" :
     async def restarter(app, message):
       data.clear()
       await message.reply_text("Successfully Cleared Queue...")
+
+    @app.on_message(filters.incoming & filters.command(["ul", f"ul@{BOT_USERNAME}"]))
+    async def help_message(app, message):
+        await upload_dir(app, message)
               
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
@@ -119,7 +124,7 @@ if __name__ == "__main__" :
     async def help_message(app, message):
         await eval_message_f(app, message)
         
-    @app.on_message(filters.incoming & filters.command(["exec", f"exec@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["bash", f"bash@{BOT_USERNAME}"]))
     async def help_message(app, message):
         await exec_message_f(app, message)
         
@@ -133,7 +138,7 @@ if __name__ == "__main__" :
         
     @app.on_message(filters.incoming & filters.command(["cmds", f"cmds@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await message.reply_text("┏━━━━━━━━━━━━━━━━━\n┣🚦Start - To The Start\n┣Cmds- To Repeat This List\n┣ Compress - To Compress The Video Manually\n┣Eval - Solve An Argument\n┣THUMB FEATURES COMING VERY SOON\n┣Clear - Clear The Queue\n┣Restart - Restart The Bot\n┗━━━━━━━━━━━━━━━━━", quote=True)
+        await message.reply_text("┏━━━━━━━━━━━━━━━━━\n┣🚦Start - To The Start\n┣Cmds- To Repeat This List\n┣ Compress - To Compress The Video Manually\n┣Eval - Solve An Argument\n┣Send Any Photo To Set As Thumbnail\n┣Delthumb - To Delete Thumbnail\n┣Ul - To Upload Fil Manually\n┣Clear - Clear The Queue\n┣Restart - Restart The Bot\n┗━━━━━━━━━━━━━━━━━", quote=True)
     
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
