@@ -115,6 +115,8 @@ if __name__ == "__main__" :
                 reply_to_message_id=vid,
             )
             await dp.delete()
+            os.remove(video_file)
+            os.remove(output_file)
         else:
           await dp.edit("Failed To Generate Sample Due To Locked Infrastructure")
           time.sleep(1.5)
@@ -191,5 +193,4 @@ if __name__ == "__main__" :
         button
     )
     app.add_handler(call_back_button_handler)
-
     app.run()
