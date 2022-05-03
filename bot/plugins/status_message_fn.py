@@ -161,3 +161,33 @@ async def upload_dir(client, message):
     await xhamster.delete_messages
   else:
      await message.reply_text(f"Directory Not Found ```{cmd1}```" parse_mode=Markdown)
+        
+async def sample_gen(app, message):
+  if message.chat.id not in AUTH_USERS:
+     await message.reply_text("You Are Not Authorised To Use This Bot")
+  if message.reply_to_message:
+     vid = message.reply_to_message.message_id
+     dp = await vid.reply_text("Downloading The Video", parse_mode="markdown")
+     await vid.download(file_name='/app/samplevideo.mkv')
+     await dp.edit("Downloading Finished Starting To Generate Sample")
+     video_file='/app/samplevideo.mkv'
+     output_file='/app/sample_video.mkv'
+     await dp.edit("Generating Sample...This May Take Few Moments")
+     file_gen_cmd = f"ffmpeg -ss 00:30 -i "{video_file}" -t 30 "{output_file}" -y"
+     output = await run_subprocess(file_gen_cmd)
+  else:
+     await message.reply_text('NO FILE DETECTED')
+  if os.path.exists(output_file):
+     await dp.edit('Uploading The Video')
+     await client.send_document(
+           chat_id=message.chat.id,
+           document=output_file,
+           caption="30 SECONDS SAMPLE",
+           reply_to_message_id=vid,
+     )
+                await dp.delete()
+                os.remove(video_file)
+                os.remove(output_file)
+  else:
+    await dp.edit("Failed To Generate Sample Due To Locked Infrastructure")
+    os.remove(video_file)
