@@ -170,13 +170,13 @@ async def upload_dir(client, message):
   else:
      await message.reply_text(f"Directory Not Found ```{cmd1}```", parse_mode="markdown")
         
-async def sample_gen(app, message, client):
+async def sample_gen(message, client):
   if message.chat.id not in AUTH_USERS:
      await message.reply_text("You Are Not Authorised To Use This Bot")
   if message.reply_to_message:
      vid = message.reply_to_message.message_id
      dp = await message.reply_to_message.reply_text("Downloading The Video", parse_mode="markdown")
-     video = await app.download_media(
+     video = await client.download_media(
         message=message.reply_to_message,
         file_name='/app/samplevideo.mkv',
         )
