@@ -173,7 +173,7 @@ async def sample_gen(app, message):
      video_file='/app/samplevideo.mkv'
      output_file='/app/sample_video.mkv'
      await dp.edit("Generating Sample...This May Take Few Moments")
-     file_gen_cmd = f"ffmpeg -ss 00:30 -i "{video_file}" -t 30 "{output_file}" -y"
+     file_gen_cmd = f'ffmpeg -ss 00:30 -i "{video_file}" -t 30 "{output_file}" -y'
      output = await run_subprocess(file_gen_cmd)
   else:
      await message.reply_text('NO FILE DETECTED')
