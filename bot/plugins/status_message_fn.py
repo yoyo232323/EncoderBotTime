@@ -167,8 +167,11 @@ async def sample_gen(app, message):
      await message.reply_text("You Are Not Authorised To Use This Bot")
   if message.reply_to_message:
      vid = message.reply_to_message.message_id
-     dp = await vid.reply_text("Downloading The Video", parse_mode="markdown")
-     await vid.download(file_name='/app/samplevideo.mkv')
+     dp = await message.reply_to_message.reply_text("Downloading The Video", parse_mode="markdown")
+     video = await bot.download_media(
+        message=message.reply_to_message,
+        file_name='/app/samplevideo.mkv',
+        )
      await dp.edit("Downloading Finished Starting To Generate Sample")
      video_file='/app/samplevideo.mkv'
      output_file='/app/sample_video.mkv'
@@ -183,7 +186,7 @@ async def sample_gen(app, message):
            chat_id=message.chat.id,
            document=output_file,
            caption="30 SECONDS SAMPLE",
-           reply_to_message_id=vid,
+           reply_to_message_id=message.reply_to_message,
      )
      await dp.delete()
      os.remove(video_file)
