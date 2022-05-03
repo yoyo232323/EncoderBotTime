@@ -142,6 +142,14 @@ async def upload_log_file(client, message):
   else:
     return
 
+async def run_subprocess(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+    return await process.communicate()
+
 async def upload_dir(client, message):
   if message.from_user.id in AUTH_USERS:
     if True:
