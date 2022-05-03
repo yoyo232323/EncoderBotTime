@@ -190,7 +190,7 @@ async def sample_gen(app, message):
      await message.reply_text('NO FILE DETECTED')
   if os.path.exists(output_file):
      await dp.edit('Uploading The Video')
-     await client.send_document(
+     await app.send_document(
            chat_id=message.chat.id,
            document=output_file,
            caption="30 SECONDS SAMPLE",
