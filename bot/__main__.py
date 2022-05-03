@@ -28,7 +28,8 @@ from bot.plugins.status_message_fn import (
     eval_message_f,
     exec_message_f,
     upload_log_file,
-    upload_dir
+    upload_dir,
+    sample_gen
 )
 
 from bot.commands import Command
@@ -130,7 +131,7 @@ if __name__ == "__main__" :
         
     @app.on_message(filters.incoming & filters.command(["sample", f"sample@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await sample(app, message)
+        await sample_gen(app, message)
         
     @app.on_message(filters.incoming & filters.command(["stop", f"stop@{BOT_USERNAME}"]))
     async def help_message(app, message):
