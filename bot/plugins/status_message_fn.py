@@ -192,9 +192,6 @@ async def sample_gen(app, message):
      file_gen_cmd = f'ffmpeg -ss 00:30 -i "{video_file}" -map 0 -c:v copy -c:a copy -c:s copy? -t 30 "{output_file}" -y'
      output = await run_subprocess(file_gen_cmd)
      duration, bitrate = await media_info(output_file)
-     if duration is None or bitrate is None:
-       try:
-          await dp.edit("FAILED TO GET METADATA")
      thumbpic = await take_screen_shot(
       output_file,
       os.path.dirname(os.path.abspath(output_file)),
