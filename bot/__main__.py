@@ -132,6 +132,8 @@ if __name__ == "__main__" :
         
     @app.on_message(filters.incoming & filters.command(["sample", f"sample@{BOT_USERNAME}"]))
     async def help_message(app, message):
+        if message.chat.id not in AUTH_USERS:
+            return await message.reply_text("You Are Not Authorised To Use This Bot 🗑")
         await sample_gen(app, message)
         
     @app.on_message(filters.incoming & filters.command(["stop", f"stop@{BOT_USERNAME}"]))
