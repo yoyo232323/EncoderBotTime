@@ -24,6 +24,11 @@ from bot.helper_funcs.display_progress import (
     TimeFormatter,
     humanbytes
 )
+from bot.helper_funcs.ffmpeg import (
+  media_info,
+  take_screen_shot,
+  get_width_height
+)
 
 async def exec_message_f(client, message):
   if message.from_user.id in AUTH_USERS:
@@ -184,14 +189,35 @@ async def sample_gen(app, message):
      video_file='/app/samplevideo.mkv'
      output_file='/app/sample_video.mkv'
      await dp.edit("Generating Sample...This May Take Few Moments")
-     file_gen_cmd = f'ffmpeg -ss 00:30 -i "{video_file}" -t 30 "{output_file}" -y'
+     file_gen_cmd = f'ffmpeg -ss 00:30 -i "{video_file}" -map 0 -c:v copy -c:a copy -c:s copy? -t 30 "{output_file}" -y'
      output = await run_subprocess(file_gen_cmd)
+     duration, bitrate = await media_info(output_file)
+     if duration is None or bitrate is None:
+       try:
+          await dp.edit("FAILED TO GET METADATA")
+     thumbpic = await take_screen_shot(
+      output_file,
+      os.path.dirname(os.path.abspath(output_file)),
+      (duration / 2)
+     )
+     width, height = get_width_height(output_file)
   else:
      await message.reply_text('NO FILE DETECTED')
   if os.path.exists(output_file):
      await dp.edit('Uploading The Video')
      chat_id = message.chat.id
-     await app.send_document(chat_id, output_file, caption="Sample")
+     upload = await app.send_video(
+        chat_id=message.chat.id,
+        video=output_file,
+        caption="Sample Generated From 00:30 Of 30 SECONDS",
+        supports_streaming=True,
+        duration=duration,
+        width=width,
+        height=height,
+        file_name=output_file,
+        thumb=thumbpic,
+        reply_to_message_id=vid
+     )
      await dp.delete()
      os.remove(video_file)
      os.remove(output_file)
