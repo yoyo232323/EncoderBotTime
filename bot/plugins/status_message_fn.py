@@ -185,9 +185,9 @@ async def sample_gen(app, message):
            caption="30 SECONDS SAMPLE",
            reply_to_message_id=vid,
      )
-                await dp.delete()
-                os.remove(video_file)
-                os.remove(output_file)
+     await dp.delete()
+     os.remove(video_file)
+     os.remove(output_file)
   else:
-    await dp.edit("Failed To Generate Sample Due To Locked Infrastructure")
-    os.remove(video_file)
+     await dp.edit("Failed To Generate Sample Due To Locked Infrastructure")
+     os.remove(video_file)
