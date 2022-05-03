@@ -160,7 +160,7 @@ async def upload_dir(client, message):
         )
     await xhamster.delete_messages
   else:
-     await message.reply_text(f"Directory Not Found ```{cmd1}```" parse_mode=Markdown)
+     await message.reply_text(f"Directory Not Found ```{cmd1}```", parse_mode="markdown")
         
 async def sample_gen(app, message):
   if message.chat.id not in AUTH_USERS:
