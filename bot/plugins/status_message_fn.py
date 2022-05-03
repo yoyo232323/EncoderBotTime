@@ -192,11 +192,9 @@ async def sample_gen(app, message):
      file_gen_cmd = f'ffmpeg -ss 00:30 -i "{video_file}" -map 0 -c:v copy -c:a copy -c:s copy? -t 30 "{output_file}" -y'
      output = await run_subprocess(file_gen_cmd)
      duration, bitrate = await media_info(output_file)
-     thumbpic = await take_screen_shot(
-      output_file,
-      os.path.dirname(os.path.abspath(output_file)),
-      (duration / 2)
-     )
+     output_thumb = '/app/thumb_output.jpeg'
+     thumb_cmd = f'ffmpeg -i {output_file} -ss 00:15 -frames:v 1 "{output_thumb}" -y'
+     output = await run_subprocess(thumb_cmd)
      width, height = get_width_height(output_file)
   else:
      await message.reply_text('NO FILE DETECTED')
@@ -212,12 +210,13 @@ async def sample_gen(app, message):
         width=width,
         height=height,
         file_name=output_file,
-        thumb=thumbpic,
+        thumb=output_thumb,
         reply_to_message_id=vid
      )
      await dp.delete()
      os.remove(video_file)
      os.remove(output_file)
+     os.remove(output_thumb)
   else:
      await dp.edit("Failed To Generate Sample Due To Locked Infrastructure")
      os.remove(video_file)
