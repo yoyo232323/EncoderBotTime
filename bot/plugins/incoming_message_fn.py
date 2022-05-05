@@ -109,12 +109,15 @@ async def incoming_compress_message_f(update):
       nam = opm.replace(".", " ")
       anitopy_options = {'allowed_delimiters': ' '}
       new_name = anitopy.parse(nam)
-      anime_name = new_name['anime_title']
-      episode_no = new_name['episode_number']  
-      joined_string = f"[{anime_name}] [Episode {episode_no}] [@ANIXPO]"
+      anime_name = new_name['anime_title']  
+      joined_string = f"[{anime_name}]"
       if 'anime_season' in new_name.keys():
-        animes_season = new_name['anime_season']
-        joined_string = f"[{anime_name}] [Season {animes_season}] [Episode {episode_no}] [@ANIXPO]"
+        animes_season = new_name['animes_season']
+        joined_string = f"{joined_string}" + f" [Season {animes_season}]"
+        if 'episode_number' in new_name.keys():
+          episode_no = new_name['episode_number']
+          joined_string = f"{joined_string}" + f" [Episode {episode_no}]"
+      joined_string = f"{joined_string}" + f" [@ANIXPO]
       LOGGER.info(saved_file_path)  
       LOGGER.info(video)
       if( video is None ):
