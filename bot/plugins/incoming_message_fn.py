@@ -117,7 +117,6 @@ async def incoming_compress_message_f(update):
         if 'episode_number' in new_name.keys():
           episode_no = new_name['episode_number']
           joined_string = f"{joined_string}" + f" [Episode {episode_no}]"
-      joined_string = f"{joined_string}" + f" [@ANIXPO]
       LOGGER.info(saved_file_path)  
       LOGGER.info(video)
       if( video is None ):
@@ -184,6 +183,7 @@ async def incoming_compress_message_f(update):
     else:
         thumbnailed = thumb_image_path
     width, height = get_width_height(saved_file_path)
+    joined_string = f"{joined_string}" + f" [@ANIXPO]
     chat_id = LOG_CHANNEL
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
