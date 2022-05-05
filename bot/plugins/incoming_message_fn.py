@@ -183,7 +183,7 @@ async def incoming_compress_message_f(update):
     else:
         thumbnailed = thumb_image_path
     width, height = get_width_height(saved_file_path)
-    joined_string = f"{joined_string}" + f" [@ANIXPO]
+    og = joined_string + " [@ANIXPO]"
     chat_id = LOG_CHANNEL
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
@@ -227,12 +227,12 @@ async def incoming_compress_message_f(update):
       upload = await bot.send_video(
         chat_id=update.chat.id,
         video=o,
-        caption=joined_string,
+        caption=og,
         supports_streaming=True,
         duration=duration,
         width=width,
         height=height,
-        file_name=joined_string,
+        file_name=og,
         thumb=thumbnailed,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
