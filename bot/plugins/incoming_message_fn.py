@@ -1,4 +1,5 @@
 import datetime
+import anitopy
 import logging
 logging.basicConfig(
     level=logging.DEBUG,
@@ -103,140 +104,17 @@ async def incoming_compress_message_f(update):
       saved_file_path = video
       eni = saved_file_path.split("/")[-1]
       xnx = eni.split(".")[-1]
-      opm = eni.replace(f".{xnx}", " [@FIERCENETWORK].mkv")
-      if "BTG" in opm:
-       opm = opm.replace("BTG", " ")
-       opm = opm.replace(".", " ") 
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "[BTG]" in opm:
-       opm = opm.replace("[BTG]", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "[BGT]" in opm:
-       opm = opm.replace("[BGT]", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "BGT" in opm:
-       opm = opm.replace("BGT", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")  
-      elif "ToonWorld4All" in opm:
-       opm = opm.replace("ToonWorld4All", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "[ToonWorld4All]" in opm:
-       opm = opm.replace("[ToonWorld4All]", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "AnimeRG" in opm:
-       opm = opm.replace("AnimeRG", " ")
-       opm = opm.replace("pseudo"," ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "[Kayoanime]" in opm:
-       opm = opm.replace("[Kayoanime]", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "Kayoanime" in opm:
-       opm = opm.replace("[Kayoanime]", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")  
-      elif "[RTI]" in opm:
-       opm = opm.replace("[RTI]", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("-", "-")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "RTI" in opm:
-       opm = opm.replace("RTI", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("-", "-")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")  
-      elif "MoviesVerse" in opm:
-       opm = opm.replace("MoviesVerse", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "KatMovieHD" in opm:
-       opm = opm.replace("KatMovieHD", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "TheDNK" in opm:
-       opm = opm.replace("TheDNK", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "HENiL" in opm:
-       opm = opm.replace("HENiL", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ") 
-      elif "PSA" in opm:
-       opm = opm.replace("PSA", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "Pahe" in opm:
-       opm = opm.replace("Pahe", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")
-      elif "Telly" in opm:
-       opm = opm.replace("Telly", " ")
-       opm = opm.replace(".", " ")
-       opm = opm.replace("_", " " )
-       opm = opm.replace("-", "-")
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")  
-      else:
-       opm = opm.replace("_", " " )
-       opm = opm.replace(".", " ")
-       opm = opm.replace("-", "-") 
-       opm = opm.replace("mkv" ," ")
-       opm = opm.replace("mp4" ," ")   
+      opm = eni.replace(f".{xnx}", " .mkv")
+      nam = opm.replace("_", " ")
+      nam = opm.replace(".", " ")
+      anitopy_options = {'allowed_delimiters': ' '}
+      new_name = anitopy.parse(nam)
+      anime_name = new_name['anime_title']
+      episode_no = new_name['episode_number']  
+      joined_string = f"[{anime_name}] [Episode {episode_no}] [@ANIXPO]"
+      if 'anime_season' in new_name.keys():
+        animes_season = new_name['anime_season']
+        joined_string = f"[{anime_name}] [Season {animes_season}] [Episode {episode_no}] [@ANIXPO]"
       LOGGER.info(saved_file_path)  
       LOGGER.info(video)
       if( video is None ):
@@ -346,12 +224,12 @@ async def incoming_compress_message_f(update):
       upload = await bot.send_video(
         chat_id=update.chat.id,
         video=o,
-        caption=opm,
+        caption=joined_string,
         supports_streaming=True,
         duration=duration,
         width=width,
         height=height,
-        file_name=opm,
+        file_name=joined_string,
         thumb=thumbnailed,
         reply_to_message_id=update.message_id,
         progress=progress_for_pyrogram,
