@@ -112,7 +112,7 @@ async def incoming_compress_message_f(update):
       anime_name = new_name['anime_title']  
       joined_string = f"[{anime_name}]"
       if 'anime_season' in new_name.keys():
-        animes_season = new_name['animes_season']
+        animes_season = new_name['anime_season']
         joined_string = f"{joined_string}" + f" [Season {animes_season}]"
       if 'episode_number' in new_name.keys():
         episode_no = new_name['episode_number']
