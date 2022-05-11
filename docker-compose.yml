@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  Educational-Encoder:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    container_name: encoder
+    environment:
+      - APP_ID=${APP_ID}
+      - API_HASH=${API_HASH}
+      - TG_BOT_TOKEN=${TG_BOT_TOKEN}
+      - AUTH_USERS=${AUTH_USERS}
+      - FFMPEG=${FFMPEG}
+      - ENV=${ENV}
+      - LOG_CHANNEL=${LOG_CHANNEL}
+    volumes:
+      - "/codebase:/codebase"
+      - "/storage:/storage"
+    restart: always
