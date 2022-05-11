@@ -1,6 +1,6 @@
 from bot.get_cfg import get_config
 class Config(object):
-    SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
+    SESSION_NAME = get_config("SESSION_NAME", "Nirusaki")
     FFMPEG = get_config("FFMPEG")
     APP_ID = int(get_config("APP_ID", 12345))
     API_HASH = get_config("API_HASH", "")
@@ -15,7 +15,7 @@ class Config(object):
     )
     TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "")
     DOWNLOAD_LOCATION = get_config("DOWNLOAD_LOCATION", "/app/downloads")
-    BOT_USERNAME = get_config("BOT_USERNAME", "")
+    BOT_USERNAME = get_config("BOT_USERNAME", "nothing")
     MAX_FILE_SIZE = 2097152000
     TG_MAX_FILE_SIZE = 2097152000
     FREE_USER_MAX_FILE_SIZE = 2097152000
